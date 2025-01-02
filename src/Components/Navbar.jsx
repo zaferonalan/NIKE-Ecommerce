@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo2.png'
 
 export const NavbarMenu = [
@@ -31,15 +32,23 @@ export const NavbarMenu = [
 const Navbar = () => {
 
   return (
-    <div className="text-white py-8">
-        <div className="container flex justify-between">
+    <div className="text-black py-8">
+        <div className="container flex justify-between items-center">
             {/* logo */}
             <div>
                 <img src={Logo} alt="" className='max-w-[100px]'/>
             </div>
             {/* Menu Section */}
-            <div className="">
-                
+            <div className="hidden md:block">
+              <ul className='flex items-center relative  gap-4 z-40'>
+                {
+                  NavbarMenu.map((item) => (
+                    <li key={item.id}>
+                      <Link to={item.link} className='inline-block text-base font-semibold py-2 px-3 uppercase'>{item.title}</Link>
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
         </div>
     </div>

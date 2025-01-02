@@ -1,12 +1,35 @@
-import Hero from "./Components/Hero"
 import Navbar from "./Components/Navbar"
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
+import Home from "./Pages/Home"
+
 
 const App = () => {
+
+  const Layout =  () => {
+    return(
+      <>
+        <Navbar/>
+        <Outlet/>
+      </>
+    )
+  }
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout/>,
+      children: [
+        {
+          path: "/", element: <Home/>
+        },
+      ]
+    }
+  ])
+
   return (
-    <div>
-      <Navbar/>
-      <Hero/>
-    </div>
+    <main className="overflow-x-hidden">
+      <RouterProvider router={router} />
+    </main>
   )
 }
 

@@ -1,9 +1,9 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
 
 @layer base {
     .text-shadow {
